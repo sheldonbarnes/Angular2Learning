@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component,enableProdMode} from 'angular2/core';
 import {TestService} from './app.testservice';
 import {HTTP_BINDINGS,Http} from 'angular2/http';
 import  'rxjs/add/operator/map';
@@ -10,7 +10,7 @@ import {Observable} from 'rxjs/Observable';
     selector: 'my-app',
     templateUrl: 'template1.html',
       viewProviders: [],
-    bindings: [TestService]
+    bindings: [TestService, HTTP_BINDINGS]
 })
 
 export class AppComponent {
@@ -19,6 +19,7 @@ export class AppComponent {
 
   constructor(http: Http, ts: TestService)
   {
+
 
     ts.getSomething()
     .map(res => res.json())

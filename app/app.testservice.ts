@@ -25,4 +25,8 @@ export class TestService implements ITestService{
         return this.http.get('heroes.json');
     //console.log('Sheldon is good');
   }
+
+  public getHeroes(): Observable<Response> {
+    return null;
+  }
 }

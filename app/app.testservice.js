@@ -1,5 +1,4 @@
 System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], function(exports_1) {
-    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -30,6 +29,9 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     console.log('I am about to pull the data');
                     return this.http.get('heroes.json');
                     //console.log('Sheldon is good');
+                };
+                TestService.prototype.getHeroes = function () {
+                    return null;
                 };
                 TestService = __decorate([
                     core_1.Component({}), 
