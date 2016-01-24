@@ -1,64 +1,67 @@
 import {Component,enableProdMode} from 'angular2/core';
+import {View} from 'angular2/core';
+//import {RouteConfig} from 'angular2/router';
 import {TestService} from './app.testservice';
-import {HTTP_BINDINGS,Http} from 'angular2/http';
-import  'rxjs/add/operator/map';
+import {Customer} from './models/Customer';
+import {CustomersComponent} from './app.customercomponent';
+import {take} from 'rxjs/operator/take';
+import {map} from 'rxjs/operator/map';
 import {Observable} from 'rxjs/Observable';
-
+import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 // This is
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'template1.html',
-      viewProviders: [],
-    bindings: [TestService, HTTP_BINDINGS]
 })
+@View({
+	directives: [RouterLink, ROUTER_DIRECTIVES],
+    templateUrl: 'template1.html'
+})
+
+@RouteConfig([
+  {path: '/Customers',
+    as: 'Customers',
+    component: CustomersComponent }
+])
+
 
 export class AppComponent {
 
-  public heroes: Hero[];
+  public subdivisions: any[];
+  public customers: Customer[];
 
-  constructor(http: Http, ts: TestService)
+  constructor(ts: TestService)
   {
 
+    //ts.getSomething1();
 
-    ts.getSomething()
-    .map(res => res.json())
-    .subscribe(heroes => this.onGetHeroesComplete(heroes) );
+    ts.GetSubdivisions()
+    .map (res => res.json())
+    .subscribe (subdivisions => this.subdivisions = subdivisions);
+
+    /*
+    ts.GetCustomers()
+    .map (res => res.json())
+    .subscribe (customers => this.customers = customers);*/
+
   }
 
-  public onGetHeroesComplete (heroes: Hero[]) {
-    this.heroes = heroes;
-    console.log(JSON.stringify(heroes));
-  }
 
   public title = 'Tour of Heroes';
 
-  public hero: Hero;
 
-  //public heroes = HEROES;
-  public selectedHero: Hero;
 
-  onSelect (thisHero: Hero) {
-    console.log('Selected hero' + thisHero.name);
-    this.selectedHero = thisHero;
+  public onSelectCustomer (customer: Customer) {
+    if (customer.name == "DaShaun Gay Barnes") {
+      console.log('This is the gayest customer on the planet');
+    }
+
+    if (customer.name == "Leaf Brothers") {
+      console.log("The best leaf removal company in Hamilton County");
+    }
+    console.log(JSON.stringify(customer));
+    console.log(customer.name);
+    console.log(customer.address.zipcode);
+
   }
-
 }
-
-interface Hero {
-  id: number;
-  name: string;
-}
-
-var HEROES: Hero[] = [
-  { "id": 11, "name": "Mr. Nice" },
-  { "id": 12, "name": "Narco" },
-  { "id": 13, "name": "Bombasto" },
-  { "id": 14, "name": "Celeritas" },
-  { "id": 15, "name": "Magneta" },
-  { "id": 16, "name": "RubberMan" },
-  { "id": 17, "name": "Dynama" },
-  { "id": 18, "name": "Dr IQ" },
-  { "id": 19, "name": "Magma" },
-  { "id": 20, "name": "Tornado" }
-];

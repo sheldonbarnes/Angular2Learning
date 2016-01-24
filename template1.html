@@ -4,21 +4,18 @@
 <h2>My Heroes</h2>
 
 
-<h2>My Heroes</h2>
+
+<h2>My Subdivisions</h2>
 <ul class="heroes">
-  <li *ngFor="#hero of heroes" (click)="onSelect(hero)">
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  <li *ngFor="#subdivision of subdivisions">
+    <span class="badge">subdivision</span> {{subdivision.name.toString().trim()}}
 
 
   </li>
 </ul>
 
+<router-outlet></router-outlet>
 
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name}} details!</h2>
-  <div><label>id: </label>{{selectedHero.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="selectedHero.name" placeholder="name"/>
-  </div>
-</div>
+
+
+<a [routerLink]="['/Customers']">link to user component</a>

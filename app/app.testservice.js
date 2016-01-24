@@ -1,4 +1,4 @@
-System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], function(exports_1) {
+System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxjs/add/operator/take'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,7 +18,8 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
             function (http_1_1) {
                 http_1 = http_1_1;
             },
-            function (_1) {}],
+            function (_1) {},
+            function (_2) {}],
         execute: function() {
             TestService = (function () {
                 function TestService(http) {
@@ -30,11 +31,21 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                     return this.http.get('heroes.json');
                     //console.log('Sheldon is good');
                 };
+                TestService.prototype.GetSubdivisions = function () {
+                    console.log('Getting /api/Subdivisions');
+                    return this.http.get('http://127.0.0.1:3000/api/Subdivisions');
+                };
+                TestService.prototype.GetCustomers = function () {
+                    console.log('Getting /api/Customers');
+                    return this.http.get('http://127.0.0.1:3000/api/Customers');
+                };
                 TestService.prototype.getHeroes = function () {
                     return null;
                 };
                 TestService = __decorate([
-                    core_1.Component({}), 
+                    core_1.Component({
+                        bindings: [http_1.HTTP_BINDINGS]
+                    }), 
                     __metadata('design:paramtypes', [http_1.Http])
                 ], TestService);
                 return TestService;

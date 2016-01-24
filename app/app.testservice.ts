@@ -1,13 +1,16 @@
 import {Component} from 'angular2/core';
 import {Injectable} from 'angular2/core';
-import {Http} from 'angular2/http';
+import {Http, HTTP_BINDINGS} from 'angular2/http';
 import  'rxjs/add/operator/map';
+import  'rxjs/add/operator/take';
+//import {take} from 'rxjs/operator/take';
+//import {map} from 'rxjs/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {ITestService} from './models/ITestService';
 import {Response} from 'angular2/src/http/static_response';
 
 @Component({
-    //bindings: [HTTP_PROVIDERS]
+    bindings: [HTTP_BINDINGS]
 })
 
 export class TestService implements ITestService{
@@ -24,6 +27,17 @@ export class TestService implements ITestService{
       console.log('I am about to pull the data');
         return this.http.get('heroes.json');
     //console.log('Sheldon is good');
+  }
+
+
+  public GetSubdivisions () : Observable<Response> {
+    console.log('Getting /api/Subdivisions');
+    return this.http.get('http://127.0.0.1:3000/api/Subdivisions');
+  }
+
+  public GetCustomers () : Observable<Response> {
+    console.log('Getting /api/Customers');
+    return this.http.get('http://127.0.0.1:3000/api/Customers');
   }
 
   public getHeroes(): Observable<Response> {

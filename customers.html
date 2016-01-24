@@ -1,0 +1,8 @@
+<h1>Hello World This is the Customers</h1>
+
+<h2>My Customers</h2>
+<ul class="heroes">
+  <li *ngFor="#customer of customers" (click)="onSelectCustomer(customer)">
+    <span class="badge">customer</span> {{customer.name}}
+  </li>
+</ul>
