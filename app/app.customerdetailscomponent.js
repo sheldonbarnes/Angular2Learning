@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, router_1, app_LeafBrothersDataService_1;
-    var CustomersComponent;
+    var CustomerDetailsComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -24,15 +24,16 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
             function (_1) {}],
         execute: function() {
             // This is
-            CustomersComponent = (function () {
-                function CustomersComponent(ts) {
+            CustomerDetailsComponent = (function () {
+                function CustomerDetailsComponent(inputParameters, ts) {
                     var _this = this;
-                    console.log('I am in the constructor for the Hello world Customers Component');
+                    console.log('I am in the constructor for the CustomerDetailsComponent');
+                    console.log(inputParameters.params["id"]);
                     ts.GetCustomers()
                         .map(function (res) { return res.json(); })
                         .subscribe(function (customers) { return _this.customers = customers; });
                 }
-                CustomersComponent.prototype.onSelectCustomer = function (customer) {
+                CustomerDetailsComponent.prototype.onSelectCustomer = function (customer) {
                     if (customer.name == "DaShaun Gay Barnes") {
                         console.log('This is the gayest customer on the planet');
                     }
@@ -43,20 +44,18 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
                     console.log(customer.name);
                     console.log(customer.address.zipcode);
                 };
-                CustomersComponent = __decorate([
+                CustomerDetailsComponent = __decorate([
                     core_1.Component({
                         selector: 'customers'
                     }),
                     core_1.View({
-                        templateUrl: 'customers.html',
-                        directives: [router_1.ROUTER_DIRECTIVES]
-                    }), 
-                    __metadata('design:paramtypes', [app_LeafBrothersDataService_1.LeafBrothersDataService])
-                ], CustomersComponent);
-                return CustomersComponent;
+                        templateUrl: 'customerdetails.html' }), 
+                    __metadata('design:paramtypes', [router_1.RouteParams, app_LeafBrothersDataService_1.LeafBrothersDataService])
+                ], CustomerDetailsComponent);
+                return CustomerDetailsComponent;
             })();
-            exports_1("CustomersComponent", CustomersComponent);
+            exports_1("CustomerDetailsComponent", CustomerDetailsComponent);
         }
     }
 });
-//# sourceMappingURL=app.customercomponent.js.map
+//# sourceMappingURL=app.customerdetailscomponent.js.map

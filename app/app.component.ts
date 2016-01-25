@@ -1,18 +1,23 @@
 import {Component,enableProdMode} from 'angular2/core';
 import {View} from 'angular2/core';
 //import {RouteConfig} from 'angular2/router';
-import {TestService} from './app.testservice';
-import {Customer} from './models/Customer';
-import {CustomersComponent} from './app.customercomponent';
-import {take} from 'rxjs/operator/take';
-import {map} from 'rxjs/operator/map';
+import {LeafBrothersDataService} from './app.LeafBrothersDataService';
+
+import 'rxjs/operator/take';
+import  'rxjs/operator/map';
 import {Observable} from 'rxjs/Observable';
 import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 // This is
 
+//Import my Models and Components
+import {Customer} from './models/Customer';
+import {CustomersComponent} from './app.customercomponent';
+import {CustomerDetailsComponent} from './app.customerdetailscomponent';
+
 @Component({
     selector: 'my-app',
 })
+
 @View({
 	directives: [RouterLink, ROUTER_DIRECTIVES],
     templateUrl: 'template1.html'
@@ -21,7 +26,10 @@ import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 @RouteConfig([
   {path: '/Customers',
     as: 'Customers',
-    component: CustomersComponent }
+    component: CustomersComponent },
+    {path: '/CustomerDetails/:id',
+      as: 'CustomerDetails',
+      component: CustomerDetailsComponent }
 ])
 
 
@@ -30,38 +38,14 @@ export class AppComponent {
   public subdivisions: any[];
   public customers: Customer[];
 
-  constructor(ts: TestService)
+  constructor(ds: LeafBrothersDataService)
   {
-
-    //ts.getSomething1();
-
-    ts.GetSubdivisions()
+    ds.GetSubdivisions()
     .map (res => res.json())
     .subscribe (subdivisions => this.subdivisions = subdivisions);
-
-    /*
-    ts.GetCustomers()
-    .map (res => res.json())
-    .subscribe (customers => this.customers = customers);*/
-
   }
 
 
-  public title = 'Tour of Heroes';
 
 
-
-  public onSelectCustomer (customer: Customer) {
-    if (customer.name == "DaShaun Gay Barnes") {
-      console.log('This is the gayest customer on the planet');
-    }
-
-    if (customer.name == "Leaf Brothers") {
-      console.log("The best leaf removal company in Hamilton County");
-    }
-    console.log(JSON.stringify(customer));
-    console.log(customer.name);
-    console.log(customer.address.zipcode);
-
-  }
 }

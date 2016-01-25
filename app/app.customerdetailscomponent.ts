@@ -1,5 +1,5 @@
 import {Component,View, enableProdMode} from 'angular2/core';
-import {RouteConfig,ROUTER_DIRECTIVES} from 'angular2/router';
+import {Router,RouteParams, RouteConfig} from 'angular2/router';
 import {LeafBrothersDataService} from './app.LeafBrothersDataService';
 import {Customer} from './models/Customer';
 import  'rxjs/operator/map';
@@ -10,22 +10,21 @@ import {Observable} from 'rxjs/Observable';
 
 @Component({
     selector: 'customers'
+    //directives: [ROUTER_DIRECTIVES, ROUTER_BINDINGS]
 })
 
 
 @View({
-	templateUrl: 'customers.html',
-      directives: [ROUTER_DIRECTIVES]
-})
+	templateUrl: 'customerdetails.html'})
 
 
-export class CustomersComponent {
+export class CustomerDetailsComponent {
 
     customers: Customer[];
 
-    constructor(ts: LeafBrothersDataService) {
-      console.log('I am in the constructor for the Hello world Customers Component');
-
+    constructor(inputParameters: RouteParams,ts: LeafBrothersDataService) {
+      console.log('I am in the constructor for the CustomerDetailsComponent');
+      console.log(inputParameters.params["id"]);
       ts.GetCustomers()
       .map (res => res.json())
       .subscribe (customers => this.customers = customers);

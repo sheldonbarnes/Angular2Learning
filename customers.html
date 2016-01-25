@@ -2,7 +2,11 @@
 
 <h2>My Customers</h2>
 <ul class="heroes">
-  <li *ngFor="#customer of customers" (click)="onSelectCustomer(customer)">
-    <span class="badge">customer</span> {{customer.name}}
+  <li *ngFor="#customer of customers">
+    <span class="badge">customer
+
+    <a [routerLink]="['/CustomerDetails', {id: customer._id}]">Details for {{customer.name}}</a>
+    </span> {{customer.name}}
+
   </li>
 </ul>

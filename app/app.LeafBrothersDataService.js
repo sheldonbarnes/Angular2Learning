@@ -9,7 +9,7 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, http_1;
-    var TestService;
+    var LeafBrothersDataService;
     return {
         setters:[
             function (core_1_1) {
@@ -21,34 +21,34 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
             function (_1) {},
             function (_2) {}],
         execute: function() {
-            TestService = (function () {
-                function TestService(http) {
+            LeafBrothersDataService = (function () {
+                function LeafBrothersDataService(http) {
                     this.http = http;
                     console.log('I am in the constructor for the service');
                 }
-                TestService.prototype.getSomething = function () {
+                LeafBrothersDataService.prototype.getSomething = function () {
                     console.log('I am about to pull the data');
                     return this.http.get('heroes.json');
                     //console.log('Sheldon is good');
                 };
-                TestService.prototype.GetSubdivisions = function () {
+                LeafBrothersDataService.prototype.GetSubdivisions = function () {
                     console.log('Getting /api/Subdivisions');
                     return this.http.get('http://127.0.0.1:3000/api/Subdivisions');
                 };
-                TestService.prototype.GetCustomers = function () {
+                LeafBrothersDataService.prototype.GetCustomers = function () {
                     console.log('Getting /api/Customers');
                     return this.http.get('http://127.0.0.1:3000/api/Customers');
                 };
-                TestService = __decorate([
+                LeafBrothersDataService = __decorate([
                     core_1.Component({
                         bindings: [http_1.HTTP_BINDINGS]
                     }), 
                     __metadata('design:paramtypes', [http_1.Http])
-                ], TestService);
-                return TestService;
+                ], LeafBrothersDataService);
+                return LeafBrothersDataService;
             })();
-            exports_1("TestService", TestService);
+            exports_1("LeafBrothersDataService", LeafBrothersDataService);
         }
     }
 });
-//# sourceMappingURL=app.testservice.js.map
+//# sourceMappingURL=app.LeafBrothersDataService.js.map
