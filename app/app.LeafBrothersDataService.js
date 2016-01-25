@@ -39,6 +39,28 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
                     console.log('Getting /api/Customers');
                     return this.http.get('http://127.0.0.1:3000/api/Customers');
                 };
+                LeafBrothersDataService.prototype.GetCustomer = function (id) {
+                    console.log('Getting /api/Customer/' + id);
+                    return this.http.get('http://127.0.0.1:3000/api/Customer/' + id + "/");
+                };
+                LeafBrothersDataService.prototype.Get = function (route) {
+                    return this.http.get('http://127.0.0.1:3000/api/' + route);
+                };
+                LeafBrothersDataService.prototype.Update = function (arg, route) {
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    return this.http.put('http://127.0.0.1:3000/api/' + route, JSON.stringify(arg), {
+                        headers: headers
+                    });
+                };
+                LeafBrothersDataService.prototype.UpdateCustomer = function (cstmr) {
+                    console.log('I am making the put call' + JSON.stringify(cstmr));
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    return this.http.put('http://127.0.0.1:3000/api/Customer', JSON.stringify(cstmr), {
+                        headers: headers
+                    });
+                };
                 LeafBrothersDataService = __decorate([
                     core_1.Component({
                         bindings: [http_1.HTTP_BINDINGS]

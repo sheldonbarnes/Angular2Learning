@@ -10,4 +10,9 @@ export class Customer {
   public toString() : String {
     return this.toString();
   }
+
+  constructor () {
+    this.address = new Address();
+  }
+
 }

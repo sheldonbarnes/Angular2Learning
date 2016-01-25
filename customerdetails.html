@@ -1,1 +1,29 @@
-This is the details for the awesome customer
+
+
+<h1>Customer Information for {{ customer1.name }}</h1>
+
+
+<table class="table" border="0" cellspacing="5" cellpadding="5">
+
+<tr background-color="lightblue">
+<td>Name</td>
+<td>Phone Number</td>
+<td>Street Address</td>
+<td>City</td>
+<td>Zip Code</td>
+
+</tr>
+
+<tr>
+<td><input type=text [(ngModel)]="customer1.name" class="myinput"></td>
+<td><input type=text [(ngModel)]="customer1.phonenumber" class="myinput"></td>
+<td><input type=text [(ngModel)]="customer1.address.streetaddress" class="myinput"></td>
+<td><input type=text [(ngModel)]="customer1.address.city" class="myinput"></td>
+<td><input type=text [(ngModel)]="customer1.address.zipcode"  class="myinput"></td>
+
+</tr>
+
+</table>
+
+<button (click)="updateCustomer(customer1)">Update</button>
+<br>

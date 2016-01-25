@@ -5,8 +5,8 @@
   <li *ngFor="#customer of customers">
     <span class="badge">customer
 
-    <a [routerLink]="['/CustomerDetails', {id: customer._id}]">Details for {{customer.name}}</a>
-    </span> {{customer.name}}
+
+    </span> <a [routerLink]="['/CustomerDetails', {id: customer._id}]">{{customer.name}}</a>
 
   </li>
 </ul>
