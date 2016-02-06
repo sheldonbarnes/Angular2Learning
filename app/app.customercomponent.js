@@ -1,4 +1,5 @@
-System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataService', 'rxjs/operator/map'], function(exports_1) {
+System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataService', './app.LeafBrothersStaticDataService', 'rxjs/operator/map'], function(exports_1) {
+    "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,8 +9,11 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, router_1, app_LeafBrothersDataService_1;
-    var CustomersComponent;
+    var __param = (this && this.__param) || function (paramIndex, decorator) {
+        return function (target, key) { decorator(target, key, paramIndex); }
+    };
+    var core_1, router_1, app_LeafBrothersDataService_1, app_LeafBrothersStaticDataService_1;
+    var initState, CustomersComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -21,9 +25,13 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
             function (app_LeafBrothersDataService_1_1) {
                 app_LeafBrothersDataService_1 = app_LeafBrothersDataService_1_1;
             },
+            function (app_LeafBrothersStaticDataService_1_1) {
+                app_LeafBrothersStaticDataService_1 = app_LeafBrothersStaticDataService_1_1;
+            },
             function (_1) {}],
         execute: function() {
             // This is
+            initState = new core_1.OpaqueToken("Hellko");
             CustomersComponent = (function () {
                 function CustomersComponent(ts) {
                     var _this = this;
@@ -33,12 +41,6 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
                         .subscribe(function (customers) { return _this.customers = customers; });
                 }
                 CustomersComponent.prototype.onSelectCustomer = function (customer) {
-                    if (customer.name == "DaShaun Gay Barnes") {
-                        console.log('This is the gayest customer on the planet');
-                    }
-                    if (customer.name == "Leaf Brothers") {
-                        console.log("The best leaf removal company in Hamilton County");
-                    }
                     console.log(JSON.stringify(customer));
                     console.log(customer.name);
                     console.log(customer.address.zipcode);
@@ -50,11 +52,12 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
                     core_1.View({
                         templateUrl: 'customers.html',
                         directives: [router_1.ROUTER_DIRECTIVES]
-                    }), 
+                    }),
+                    __param(0, core_1.Inject(app_LeafBrothersStaticDataService_1.LeafBrothersStaticDataService)), 
                     __metadata('design:paramtypes', [app_LeafBrothersDataService_1.LeafBrothersDataService])
                 ], CustomersComponent);
                 return CustomersComponent;
-            })();
+            }());
             exports_1("CustomersComponent", CustomersComponent);
         }
     }

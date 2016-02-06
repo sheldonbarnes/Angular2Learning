@@ -49,7 +49,15 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map', 'rxj
                 LeafBrothersDataService.prototype.Update = function (arg, route) {
                     var headers = new http_1.Headers();
                     headers.append('Content-Type', 'application/json');
+                    console.log('The type is ' + typeof arg);
                     return this.http.put('http://127.0.0.1:3000/api/' + route, JSON.stringify(arg), {
+                        headers: headers
+                    });
+                };
+                LeafBrothersDataService.prototype.Create = function (arg, route) {
+                    var headers = new http_1.Headers();
+                    headers.append('Content-Type', 'application/json');
+                    return this.http.post('http://127.0.0.1:3000/api/' + route, JSON.stringify(arg), {
                         headers: headers
                     });
                 };

@@ -53,9 +53,10 @@ export class CustomerDetailsComponent {
 
       //me = updatedCustomer;
 
-      if (me instanceof Customer) {
+      if (typeof updatedCustomer === 'Customer') {
         console.log('We have a customer');
       }
+      console.log('The type is ' + typeof updatedCustomer)
         console.log('The name is ' + updatedCustomer.constructor);
       this.lbds.Update(updatedCustomer, "Customer")
       .map(res => res.json())

@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Injectable} from 'angular2/core';
+//import {Injectable} from 'angular2/core';
 import {Http, HTTP_BINDINGS, Headers} from 'angular2/http';
 import  'rxjs/add/operator/map';
 import  'rxjs/add/operator/take';
@@ -7,9 +7,16 @@ import {Observable} from 'rxjs/Observable';
 import {ILeafBrothersDataService} from './models/ILeafBrothersDataService';
 import {Response} from 'angular2/src/http/static_response';
 import {Customer} from './models/Customer';
+
+interface RouteProvided {
+  route: String;
+}
+
 @Component({
     bindings: [HTTP_BINDINGS]
 })
+
+
 
 export class LeafBrothersDataService implements ILeafBrothersDataService{
 
@@ -44,16 +51,28 @@ export class LeafBrothersDataService implements ILeafBrothersDataService{
   public Get (route:String) : Observable<Response> {
     return this.http.get('http://127.0.0.1:3000/api/' + route);
   }
-  
-  public Update<T>(arg:T, route:String) : Observable<Response> {
+
+  public Update<T extends RouteProvided>(arg:T, route:String) : Observable<Response> {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
+    console.log('The type is ' + typeof arg);
 
     return this.http.put('http://127.0.0.1:3000/api/' + route, JSON.stringify(arg), {
     headers: headers
     });
   }
+
+  public Create<T>(arg:T, route:String) : Observable<Response> {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+
+    return this.http.post('http://127.0.0.1:3000/api/' + route, JSON.stringify(arg), {
+    headers: headers
+    });
+  }
+
   public UpdateCustomer(cstmr: Customer): Observable<Response> {
     console.log('I am making the put call' + JSON.stringify(cstmr));
 

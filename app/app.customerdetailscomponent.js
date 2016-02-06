@@ -43,9 +43,10 @@ System.register(['angular2/core', 'angular2/router', './app.LeafBrothersDataServ
                 CustomerDetailsComponent.prototype.updateCustomer = function (updatedCustomer) {
                     var me = new Customer_1.Customer();
                     //me = updatedCustomer;
-                    if (me instanceof Customer_1.Customer) {
+                    if (typeof updatedCustomer === 'Customer') {
                         console.log('We have a customer');
                     }
+                    console.log('The type is ' + typeof updatedCustomer);
                     console.log('The name is ' + updatedCustomer.constructor);
                     this.lbds.Update(updatedCustomer, "Customer")
                         .map(function (res) { return res.json(); })

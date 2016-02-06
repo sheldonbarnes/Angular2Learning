@@ -10,6 +10,7 @@ System.register(['./Address'], function(exports_1) {
             Customer = (function () {
                 function Customer() {
                     this.address = new Address_1.Address();
+                    this.route = "Customer";
                 }
                 Customer.prototype.toString = function () {
                     return this.toString();

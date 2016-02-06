@@ -1,0 +1,223 @@
+[
+  {
+    "_id": "5643b54453673a581b510426",
+    "name": "Benjamin Sisko (Sheldon)",
+    "phonenumber": "617-415-8031",
+    "subdivision": "Brookstone Park",
+    "address": {
+      "_id": "56a6420de93472520d4f630b"
+    },
+    "__v": 0
+  },
+  {
+    "_id": "5643b58353673a581b510428",
+    "name": "Kira Nerys",
+    "phonenumber": "317-555-1212",
+    "email": "sheldon.barnes@gmail.com",
+    "subdivision": "Buckhorn Estates",
+    "address": {
+      "_id": "56a641d6e93472520d4f62b7"
+    },
+    "__v": 0
+  },
+  {
+    "_id": "5643b6803625be5e1bfeccde",
+    "name": "Odo",
+    "phonenumber": "317-555-1212",
+    "email": "sheldon.barnes@gmail.com",
+    "subdivision": "Ponds West",
+    "address": {
+      "streetaddress": "123 Market Sq",
+      "city": "Indianapolis",
+      "zipcode": "46240",
+      "_id": "56a641e1e93472520d4f62cc"
+    },
+    "__v": 0
+  },
+  {
+    "_id": "5643b77f6216d0601b78bdfd",
+    "name": "Julian Bashir",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5643b77f6216d0601b78bdfe"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5643bb74fbc5317b1b585387",
+    "name": "Jadzia Dax",
+    "address": {
+      "streetaddress": "123 Street",
+      "city": "CARMEL",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5643bb74fbc5317b1b585388"
+    },
+    "phonenumber": "317-555-1212",
+    "email": "sheldon.barnes@gmail.com",
+    "__v": 0
+  },
+  {
+    "_id": "5643bc2a377cda7d1bfda01d",
+    "name": "Miles O'Brien",
+    "address": {
+      "streetaddress": "Baldwin Lane",
+      "city": "CARMEL",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5643bc2a377cda7d1bfda01e"
+    },
+    "phonenumber": "317-555-1212",
+    "email": "test@aol.com",
+    "__v": 0
+  },
+  {
+    "_id": "5644fe8077e7b82206aa8719",
+    "name": "Quark",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5644fe8077e7b82206aa871a"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5644ff2e6485b82606bd0325",
+    "name": "Jake Sisko",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5644ff2e6485b82606bd0326"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5645006d0671692a06566b3e",
+    "name": "Worf",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5645006d0671692a06566b3f"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5645078c9e48c17306d750e7",
+    "name": "Ezri Dax",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5645078c9e48c17306d750e8"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5645083e02b3827606338e32",
+    "name": "Dukat",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5645083e02b3827606338e33"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "5645088456bb637706094ba6",
+    "name": "Nog",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "5645088456bb637706094ba7"
+    },
+    "phonenumber": "617-415-8032",
+    "__v": 0
+  },
+  {
+    "_id": "56450a0c036d248906798c7c",
+    "name": "Rom",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "56450a0c036d248906798c7d"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "56450a663ba7488a06f0e0c5",
+    "name": "Keiko O'Brien",
+    "address": {
+      "streetaddress": "123 JamRock Avenue",
+      "city": "CARMEL",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "56450a663ba7488a06f0e0c6"
+    },
+    "phonenumber": "876-555-1212",
+    "email": "asdasd@aol.com",
+    "__v": 0
+  },
+  {
+    "_id": "56450f2079220fc706f37d9e",
+    "name": "Mora Pol",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "56450f2079220fc706f37d9f"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "56450f77abb4b8c806d54fbd",
+    "name": "Tora Ziyal",
+    "address": {
+      "streetaddress": "14549 Brackney Lane",
+      "city": "Carmel",
+      "state": "IN",
+      "zipcode": "46032",
+      "_id": "56450f77abb4b8c806d54fbe"
+    },
+    "phonenumber": "617-415-8031",
+    "__v": 0
+  },
+  {
+    "_id": "564793c5041295da0516b327",
+    "name": "Joseph Sisko",
+    "address": {
+      "streetaddress": "1 Hollywood Lane",
+      "state": "IN",
+      "city": "Hollywood",
+      "zipcode": "90210",
+      "_id": "564793c5041295da0516b328"
+    },
+    "phonenumber": "317-555-1212",
+    "email": "sheldon.barnes@gmail.com",
+    "__v": 0
+  }
+]

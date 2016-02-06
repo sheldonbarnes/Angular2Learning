@@ -1,7 +1,9 @@
 import {Component,enableProdMode} from 'angular2/core';
-import {View} from 'angular2/core';
+import {View, Inject} from 'angular2/core';
 //import {RouteConfig} from 'angular2/router';
 import {LeafBrothersDataService} from './app.LeafBrothersDataService';
+import {ILeafBrothersDataService} from './models/ILeafBrothersDataService';
+import {LeafBrothersStaticDataService} from './app.LeafBrothersStaticDataService';
 
 import 'rxjs/operator/take';
 import  'rxjs/operator/map';
@@ -13,6 +15,7 @@ import { RouterLink, ROUTER_DIRECTIVES,RouteConfig } from 'angular2/router';
 import {Customer} from './models/Customer';
 import {CustomersComponent} from './app.customercomponent';
 import {CustomerDetailsComponent} from './app.customerdetailscomponent';
+
 
 @Component({
     selector: 'my-app',
@@ -38,14 +41,10 @@ export class AppComponent {
   public subdivisions: any[];
   public customers: Customer[];
 
-  constructor(ds: LeafBrothersDataService)
+  constructor(@Inject(LeafBrothersStaticDataService) ds: ILeafBrothersDataService)
   {
     ds.GetSubdivisions()
     .map (res => res.json())
     .subscribe (subdivisions => this.subdivisions = subdivisions);
   }
-
-
-
-
 }
